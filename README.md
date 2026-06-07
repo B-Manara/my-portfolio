@@ -16,29 +16,34 @@ Live demo: https://b-manar.vercel.app/
 This repository is a frontend-only project.
 
 ```
-manar-portfolio/
-+-- frontend/                 # React + Vite app
-    +-- src/
-        +-- data/
-            +-- portfolio.js  # All content lives here
-        +-- components/
-            +-- Navbar.jsx
-            +-- Footer.jsx
-            +-- Tag.jsx
-        +-- sections/
-            +-- Hero.jsx
-            +-- About.jsx
-            +-- Projects.jsx
-            +-- Awards.jsx
-            +-- Skills.jsx
-            +-- Contact.jsx    # EmailJS contact form
-        +-- hooks/
-            +-- useInView.js
-        +-- utils/
-            +-- api.js
-            +-- emailjs.js     # EmailJS setup
-    +-- .env.example
-+-- .gitignore
+my-portfolio/
+├── frontend/                      # React + Vite app
+│   ├── src/
+│   │   ├── data/
+│   │   │   └── portfolio.js       # All content lives here
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Tag.jsx
+│   │   ├── sections/
+│   │   │   ├── Hero.jsx
+│   │   │   ├── About.jsx          # Experience + Education timeline
+│   │   │   ├── Projects.jsx
+│   │   │   ├── Awards.jsx
+│   │   │   ├── Skills.jsx
+│   │   │   └── Contact.jsx        # EmailJS contact form
+│   │   ├── hooks/
+│   │   │   └── useInView.js      
+│   │   └── utils/
+│   │       ├── api.js            
+│   │       └── emailjs.js        # EmailJS configuration
+│   ├── .env.example
+│   ├── .env                       # (NOT pushed to GitHub)
+│   └── vite.config.js
+│
+├── .gitignore
+├── README.md
+└── package-lock.json
 ```
 
 ## Quick Start
