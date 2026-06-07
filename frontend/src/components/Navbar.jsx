@@ -13,8 +13,14 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    setTheme(initialTheme)
+    document.documentElement.dataset.theme = initialTheme
+
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
     }
@@ -26,6 +32,13 @@ export default function Navbar() {
     setActive(href)
     setMenuOpen(false)
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    localStorage.setItem('theme', nextTheme)
+    document.documentElement.dataset.theme = nextTheme
   }
 
   return (
@@ -47,6 +60,16 @@ export default function Navbar() {
               </button>
             </li>
           ))}
+          <li>
+            <button
+              type="button"
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+          </li>
           <li>
             <a
               href="https://linkedin.com/in/manar-boulahouanet-886aab327/"

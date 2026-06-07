@@ -10,6 +10,10 @@
   --surface-2: #252530;
   --border: rgba(255,255,255,0.07);
   --border-hover: rgba(255,255,255,0.15);
+  --nav-scrolled: rgba(10, 10, 11, 0.9);
+  --mobile-menu-bg: rgba(10, 10, 11, 0.97);
+  --grid-line: rgba(255, 255, 255, 0.025);
+  --noise-opacity: 0.4;
   --text-primary: #f0eee8;
   --text-secondary: #a09e98;
   --text-muted: #5a5855;
@@ -25,6 +29,29 @@
   --radius-sm: 6px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --max-width: 1200px;
+}
+
+[data-theme='light'] {
+  --bg: #f5ebe0;
+  --bg-2: #fbf4e8;
+  --bg-3: #ece0d4;
+  --surface: #fbf1e5;
+  --surface-2: #f2e7d8;
+  --border: rgba(92, 67, 49, 0.12);
+  --border-hover: rgba(92, 67, 49, 0.18);
+  --nav-scrolled: rgba(251, 244, 232, 0.94);
+  --mobile-menu-bg: rgba(251, 244, 232, 0.97);
+  --grid-line: rgba(120, 96, 74, 0.10);
+  --noise-opacity: 0.35;
+  --text-primary: #2c2018;
+  --text-secondary: #6f5d4a;
+  --text-muted: #847362;
+  --accent: #b0854f;
+  --accent-light: #d8b47a;
+  --accent-dim: rgba(184, 134, 86, 0.14);
+  --teal: #4ecdc4;
+  --teal-dim: rgba(78, 205, 196, 0.1);
+  color-scheme: light;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }

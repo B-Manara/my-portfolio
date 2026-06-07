@@ -10,7 +10,7 @@
 }
 
 .scrolled {
-  background: rgba(10, 10, 11, 0.9);
+  background: var(--nav-scrolled);
   backdrop-filter: blur(16px);
   border-bottom-color: var(--border);
   padding: 0.85rem 0;
@@ -94,6 +94,25 @@
   color: var(--bg);
 }
 
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: none;
+  border: 1px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.themeToggle:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
 .burger {
   display: none;
   flex-direction: column;
@@ -124,7 +143,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 10, 11, 0.97);
+    background: var(--mobile-menu-bg);
     flex-direction: column;
     justify-content: center;
     gap: 1rem;

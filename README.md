@@ -2,7 +2,6 @@
 
 A professional portfolio website built with React, Vite, and EmailJS for contact form delivery.
 
-
 Live demo: https://b-manar.vercel.app/
 
 ## Tech Stack
