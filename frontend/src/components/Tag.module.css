@@ -1,0 +1,26 @@
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.default {
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.accent {
+  background: var(--accent-dim);
+  color: var(--accent-light);
+  border: 1px solid rgba(200, 169, 110, 0.2);
+}
+
+.teal {
+  background: var(--teal-dim);
+  color: var(--teal);
+  border: 1px solid rgba(78, 205, 196, 0.2);
+}
