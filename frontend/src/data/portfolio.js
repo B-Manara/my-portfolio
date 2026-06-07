@@ -165,7 +165,7 @@ export const education = [
   },
   {
     degree: 'MSc, Information Technology — AI Track',
-    school: 'University of Constantine 1 – Frères Mentouri',
+    school: 'University of the People',
     period: 'Sep 2025 – Jul 2027',
     note: 'Rare dual-degree combining smart-grid engineering with applied AI',
   },
