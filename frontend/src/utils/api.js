@@ -5,7 +5,8 @@ export async function sendContactMessage({ name, email, subject, message }) {
     from_name: name,
     from_email: email,
     subject,
-    message,
+    // Include sender name and email in the message body so it appears in your email
+    message: `Name: ${name}\nEmail: ${email}\n\n${message}`,
   }
 
   try {
