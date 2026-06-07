@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Manar Boulahouanet — Portfolio
 
 A professional portfolio website for Manar Boulahouanet — AI Engineer, Full-Stack Developer & Renewable Energy Researcher.
@@ -101,3 +102,6 @@ Then uncomment and configure the nodemailer block in `backend/routes/contact.js`
 - **Frontend** → Vercel, Netlify, or any static host (point to `frontend/dist`)
 - **Backend** → Railway, Render, Fly.io, or any Node.js host
 - Set `VITE_API_URL` in your frontend environment to your deployed backend URL
+=======
+# my-portfolio
+>>>>>>> 13203ea26fe16bbbe637ceca21d40624c4ec1da2
