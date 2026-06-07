@@ -1,107 +1,87 @@
-<<<<<<< HEAD
-# Manar Boulahouanet — Portfolio
+# Manar Boulahouanet - Portfolio
 
-A professional portfolio website for Manar Boulahouanet — AI Engineer, Full-Stack Developer & Renewable Energy Researcher.
+A professional portfolio website built with React, Vite, and EmailJS for contact form delivery.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React 19 + Vite, CSS Modules |
-| Backend | Node.js + Express |
-| Animations | CSS transitions + IntersectionObserver |
-| Fonts | DM Serif Display · Outfit · DM Mono (Google Fonts) |
+- Frontend: React 19 + Vite
+- Styling: CSS Modules
+- Contact delivery: EmailJS (@emailjs/browser)
 
 ## Project Structure
 
+This repository is a frontend-only project.
+
 ```
 manar-portfolio/
-├── frontend/                 # React + Vite app
-│   ├── src/
-│   │   ├── data/
-│   │   │   └── portfolio.js  ← All content lives here
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   └── Tag.jsx
-│   │   ├── sections/
-│   │   │   ├── Hero.jsx
-│   │   │   ├── About.jsx      ← Experience + Education timeline
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Awards.jsx
-│   │   │   ├── Skills.jsx
-│   │   │   └── Contact.jsx    ← Form connected to backend
-│   │   ├── hooks/
-│   │   │   └── useInView.js   ← Scroll animation hook
-│   │   └── utils/
-│   │       └── api.js         ← Backend API calls
-│   └── .env.example
-└── backend/                  # Express API
-    ├── server.js
-    ├── routes/
-    │   └── contact.js        ← Contact form handler
-    └── .env.example
++-- frontend/                 # React + Vite app
+    +-- src/
+        +-- data/
+            +-- portfolio.js  # All content lives here
+        +-- components/
+            +-- Navbar.jsx
+            +-- Footer.jsx
+            +-- Tag.jsx
+        +-- sections/
+            +-- Hero.jsx
+            +-- About.jsx
+            +-- Projects.jsx
+            +-- Awards.jsx
+            +-- Skills.jsx
+            +-- Contact.jsx    # EmailJS contact form
+        +-- hooks/
+            +-- useInView.js
+        +-- utils/
+            +-- api.js
+            +-- emailjs.js     # EmailJS setup
+    +-- .env.example
++-- .gitignore
 ```
 
 ## Quick Start
 
-### 1. Backend
-
-```bash
-cd backend
-cp .env.example .env       # edit if needed
-npm install
-npm run dev                # runs on http://localhost:3001
-```
-
-### 2. Frontend
-
 ```bash
 cd frontend
-cp .env.example .env       # set VITE_API_URL if needed
+cp .env.example .env
 npm install
-npm run dev                # runs on http://localhost:5173
+npm run dev
 ```
 
-### 3. Production build
+Open the displayed localhost URL to preview the site.
 
-```bash
-cd frontend
-npm run build              # outputs to frontend/dist/
-```
+## EmailJS Setup
 
-## Updating Content
-
-All portfolio content is in one file: `frontend/src/data/portfolio.js`
-
-- **Profile, bio, links** → `profile` object
-- **Stats** (hero counters) → `stats` array
-- **Projects** → `projects` array
-- **Awards** → `awards` array
-- **Skills** → `skills` object (grouped)
-- **Work experience** → `experience` array
-- **Education** → `education` array
-- **Certifications** → `certifications` array
-
-## Contact Form Email Setup
-
-To enable real email delivery, configure SMTP in `backend/.env`:
+This project sends contact messages directly through EmailJS. Configure the following Vite environment variables in `frontend/.env`:
 
 ```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your@gmail.com
-SMTP_PASS=your-app-password
-CONTACT_TO=manar.boulahouanet@gmail.com
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
 ```
 
-Then uncomment and configure the nodemailer block in `backend/routes/contact.js`.
+Use the EmailJS template fields:
+
+- `from_name`
+- `from_email`
+- `subject`
+- `message`
 
 ## Deployment
 
-- **Frontend** → Vercel, Netlify, or any static host (point to `frontend/dist`)
-- **Backend** → Railway, Render, Fly.io, or any Node.js host
-- Set `VITE_API_URL` in your frontend environment to your deployed backend URL
-=======
-# my-portfolio
->>>>>>> 13203ea26fe16bbbe637ceca21d40624c4ec1da2
+This project deploys as a static frontend app. No backend service is required.
+
+- Frontend can be deployed on Vercel, Netlify, or any static host.
+- Set the EmailJS environment variables in your deployment provider.
+
+## Updating Content
+
+All portfolio content is stored in `frontend/src/data/portfolio.js`.
+
+- Profile and contact links -> `profile`
+- Hero stats -> `stats`
+- Projects -> `projects`
+- Awards -> `awards`
+- Skills -> `skills`
+- Experience -> `experience`
+- Education -> `education`
+- Certifications -> `certifications`

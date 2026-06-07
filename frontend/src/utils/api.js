@@ -1,22 +1,22 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
+import { sendEmail } from './emailjs'
 
-export async function sendContactMessage({ name, email, message }) {
-  const res = await fetch(`${BASE_URL}/contact`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, message }),
-  })
-
-  const data = await res.json()
-
-  if (!res.ok) {
-    throw new Error(data.errors?.join(', ') || 'Failed to send message')
+export async function sendContactMessage({ name, email, subject, message }) {
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    subject,
+    message,
   }
 
-  return data
-}
+  try {
+    const response = await sendEmail(templateParams)
 
-export async function checkHealth() {
-  const res = await fetch(`${BASE_URL}/health`)
-  return res.json()
+    if (!response || response.status !== 200) {
+      throw new Error('Failed to send message via EmailJS')
+    }
+
+    return response
+  } catch (error) {
+    throw new Error(error.text || error.message || 'Failed to send message')
+  }
 }

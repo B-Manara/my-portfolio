@@ -4,7 +4,7 @@ import { profile } from '../data/portfolio'
 import { sendContactMessage } from '../utils/api'
 import styles from './Contact.module.css'
 
-const INIT = { name: '', email: '', message: '', linkedin: '' }
+const INIT = { name: '', email: '', subject: '', message: '' }
 
 export default function Contact() {
   const { ref, isInView } = useInView()
@@ -26,7 +26,7 @@ export default function Contact() {
       setForm(INIT)
     } catch (err) {
       setStatus('error')
-      setErrorMsg(err.message || 'Something went wrong. Try again.')
+      setErrorMsg(err.message || 'Something went wrong. Please try again.')
     }
   }
 
@@ -121,6 +121,20 @@ export default function Contact() {
                       disabled={status === 'loading'}
                     />
                   </div>
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="subject" className={styles.label}>Subject</label>
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    className={styles.input}
+                    placeholder="Project or opportunity subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    required
+                    disabled={status === 'loading'}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label htmlFor="message" className={styles.label}>Message</label>
